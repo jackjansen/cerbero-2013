@@ -1,0 +1,40 @@
+# -*- Mode: Python -*- vi:si:et:sw=4:sts=4:ts=4:syntax=python
+
+
+class Recipe(recipe.Recipe):
+
+    name = 'gobject-introspection'
+    version = '1.34.1'
+    licenses = [License.LGPLv2Plus]
+    config_sh = 'sh autogen.sh'
+
+    deps = ['glib', 'gtk-doc']
+    commit = 'GOBJECT_INTROSPECTION_1_34_1'
+    remotes = {'upstream': 'git://git.gnome.org/gobject-introspection'}
+    
+    files_libs = ['libgirepository-1.0']
+    files_bins = [
+        ]
+    files_data = [
+        'lib/girepository-1.0',
+        'share/gir-1.0',
+        ]
+    files_devel = [
+        'bin/g-ir-scanner', 
+        'bin/g-ir-generate', 
+        'bin/g-ir-compiler', 
+        'bin/g-ir-annotation-tool',
+        'lib/pkgconfig/gobject-introspection-no-export-1.0.pc',
+        'lib/pkgconfig/gobject-introspection-1.0.pc',
+        'lib/gobject-introspection',
+        'share/aclocal/introspection.m4',
+        'share/gobject-introspection-1.0',
+        'include/gobject-introspection-1.0',
+        ]
+
+    def prepare(self):
+        # On OSX we need to run 32-bit python during a 32-bit build, because
+        # otherwise it cannot import the extension lib it has just built.
+        if self.config.target_platform == Platform.DARWIN \
+                and self.config.target_arch == Architecture.X86: 
+            self.make = "VERSIONER_PYTHON_PREFER_32_BIT=yes " + self.make
