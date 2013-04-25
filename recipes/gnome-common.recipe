@@ -1,0 +1,18 @@
+# -*- Mode: Python -*- vi:si:et:sw=4:sts=4:ts=4:syntax=python
+
+
+class Recipe(recipe.Recipe):
+
+    name = 'gnome-common'
+    version = '3.7.4'
+    remotes = {'origin': 'git://git.gnome.org/gnome-common'}
+    commit = '3.7.4'
+    config_sh = 'sh autogen.sh'
+    files_devel = [
+        'bin/gnome-doc-common',
+        'bin/gnome-autogen.sh',
+        'share/gnome-common',
+        'share/aclocal/gnome-compiler-flags.m4',
+        'share/aclocal/gnome-common.m4',
+        'share/aclocal/gnome-code-coverage.m4',
+    ]

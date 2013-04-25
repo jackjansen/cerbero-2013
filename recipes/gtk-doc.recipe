@@ -29,6 +29,7 @@ class Recipe(recipe.Recipe):
     files_devel = [
         'share/pkgconfig/gtk-doc.pc',
         'share/aclocal/gtk-doc.m4',
+        'share/gtk-doc',
         ]
     
     platform_deps = {Platform.WINDOWS: ['docbook-xsl', 'docbook-xml'],

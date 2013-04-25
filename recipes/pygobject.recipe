@@ -5,8 +5,7 @@ class Recipe(recipe.Recipe):
     name = 'pygobject'
     version = '2.28.6'
     licenses = [License.LGPLv2_1Plus]
-    deps = ['glib']
-    configure_options = '--disable-introspection'
+    deps = ['glib', 'gobject-introspection']
     make_check = None  # disabled until we fix the checks
 
     def prepare(self):

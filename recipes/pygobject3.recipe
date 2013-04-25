@@ -1,0 +1,57 @@
+# -*- Mode: Python -*- vi:si:et:sw=4:sts=4:ts=4:syntax=python
+
+
+class Recipe(recipe.Recipe):
+    name = 'pygobject3'
+    version = '3.7.91'
+    licenses = [License.LGPLv2_1Plus]
+    deps = ['glib', 'gobject-introspection', 'gnome-common']
+    remotes = {'origin' : 'git://git.gnome.org/pygobject'}
+    commit = '3.7.91'
+    config_sh = 'sh autogen.sh'
+    make_check = None  # disabled until we fix the checks
+
+#     def prepare(self):
+#         if self.config.target_platform == Platform.WINDOWS:
+#             self.files_mainlib = ['bin/libpyglib-2.0-python.pyd']
+#             self.files_libs = []
+# 
+#     def post_install(self):
+#         import shutil
+#         if self.config.target_platform == Platform.WINDOWS:
+#             shutil.move(os.path.join(self.config.prefix, 'lib', 'libpyglib-2.0-python.pyd'),
+#                         os.path.join(self.config.prefix, 'bin', 'libpyglib-2.0-python.pyd'))
+# 
+    files_libs = ['libpyglib-gi-2.0-python2.7']
+    files_python = [
+        'site-packages/pygtkcompat/__init__.py',
+        'site-packages/pygtkcompat/generictreemodel.py',
+        'site-packages/pygtkcompat/pygtkcompat.py',
+        'site-packages/gi/__init__.py',
+        'site-packages/gi/importer.py',
+        'site-packages/gi/module.py',
+        'site-packages/gi/pygtkcompat.py',
+        'site-packages/gi/types.py',
+        'site-packages/gi/_glib/_glib%(pext)s',
+        'site-packages/gi/_glib/__init__.py',
+        'site-packages/gi/_glib/option.py',
+        'site-packages/gi/_gobject/_gobject%(pext)s',
+        'site-packages/gi/_gobject/__init__.py',
+        'site-packages/gi/_gobject/constants.py',
+        'site-packages/gi/_gobject/propertyhelper.py',
+        'site-packages/gi/_gobject/signalhelper.py',
+        'site-packages/gi/overrides/keysyms.py',
+        'site-packages/gi/overrides/__init__.py',
+        'site-packages/gi/overrides/Pango.py',
+        'site-packages/gi/overrides/Gtk.py',
+        'site-packages/gi/overrides/Gio.py',
+        'site-packages/gi/overrides/Gdk.py',
+        'site-packages/gi/overrides/GObject.py',
+        'site-packages/gi/overrides/GLib.py',
+        'site-packages/gi/overrides/GIMarshallingTests.py',
+        'site-packages/gi/repository/__init__.py',
+    ]
+    files_devel = [
+        'lib/pkgconfig/pygobject-3.0.pc',
+        'include/pygobject-3.0',
+    ]
