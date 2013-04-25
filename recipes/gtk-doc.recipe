@@ -6,6 +6,31 @@ class Recipe(recipe.Recipe):
     # TODO: check license - source files are GPLv2+ and COPYING is GPLv3
     licenses = [License.GPLv2Plus]
     deps = ['libxslt']
+    files_bins = [
+        'gtkdoc-check',
+        'gtkdoc-depscan',
+        'gtkdoc-fixxref',
+        'gtkdoc-mkdb',
+        'gtkdoc-mkhtml',
+        'gtkdoc-mkman',
+        'gtkdoc-mkpdf',
+        'gtkdoc-mktmpl',
+        'gtkdoc-rebase',
+        'gtkdoc-scan',
+        'gtkdoc-scangobj',
+        'gtkdoc-scanobj',
+        'gtkdocize',
+        ]
+    
+    files_misc = [
+        'share/sgml/gtk-doc',
+        ]
+        
+    files_devel = [
+        'share/pkgconfig/gtk-doc.pc',
+        'share/aclocal/gtk-doc.m4',
+        ]
+    
     platform_deps = {Platform.WINDOWS: ['docbook-xsl', 'docbook-xml'],
                      Platform.DARWIN: ['docbook-xsl', 'docbook-xml']}
 
