@@ -3,11 +3,11 @@
 
 class Recipe(recipe.Recipe):
     name = 'pygobject3'
-    version = '3.7.91'
+    version = '3.7.2'
     licenses = [License.LGPLv2_1Plus]
     deps = ['glib', 'gobject-introspection', 'gnome-common']
     remotes = {'origin' : 'git://git.gnome.org/pygobject'}
-    commit = '3.7.91'
+    commit = '3.7.2'
     config_sh = 'sh autogen.sh'
     make_check = None  # disabled until we fix the checks
 
@@ -27,6 +27,8 @@ class Recipe(recipe.Recipe):
         'site-packages/pygtkcompat/__init__.py',
         'site-packages/pygtkcompat/generictreemodel.py',
         'site-packages/pygtkcompat/pygtkcompat.py',
+        'site-packages/gi/_gi%(pext)s',
+        'site-packages/gi/_gi_cairo%(pext)s',
         'site-packages/gi/__init__.py',
         'site-packages/gi/importer.py',
         'site-packages/gi/module.py',
