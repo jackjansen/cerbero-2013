@@ -1,0 +1,35 @@
+# -*- Mode: Python -*- vi:si:et:sw=4:sts=4:ts=4:syntax=python
+
+from cerbero.tools.libtool import LibtoolLibrary
+
+class Recipe(recipe.Recipe):
+
+    name = 'x264'
+    _x264_version = '130'
+    version = '0.%s' + _x264_version
+    remotes = {'origin': 'git://git.videolan.org/x264.git'}
+    config_sh = './configure --enable-static --enable-shared'
+    configure_tpl = '%(config-sh)s --prefix=%(prefix)s --libdir=%(libdir)s'
+    commit = 'origin/stable'
+    files_bins = [
+        "x264"
+    ]
+    files_libs = [
+        'libx264'
+    ]
+    files_devel = [
+        "include/x264.h",
+        "include/x264_config.h",
+    ]
+    files_misc = [
+    ]
+
+    def prepare(self):
+        # x264 has it's own definition of various configure options
+        self.config.host = self.config.build
+        self.config.build = None
+        
+
+    def install(self):
+        lib = LibtoolLibrary('libx264', self._x264_version, None, None, self.config.libdir, self.config.target_platform)
+        lib.save()
