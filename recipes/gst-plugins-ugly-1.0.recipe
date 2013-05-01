@@ -25,6 +25,11 @@ class Recipe(recipe.Recipe):
             'lib/gstreamer-1.0/libgstmad%(mext)s',
 
     ]
+    
+    files_misc = [
+        'share/gstreamer-1.0/presets/GstAmrnbEnc.prs',
+        'share/gstreamer-1.0/presets/GstX264Enc.prs',
+    ]
 
     files_plugins_dvd = [
              'lib/gstreamer-1.0/libgstdvdlpcmdec%(mext)s',

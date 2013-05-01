@@ -5,9 +5,10 @@ class Recipe(recipe.Recipe):
     name = 'atk'
     version = '2.4.0'
     licenses = [License.LGPLv2Plus]
-    deps = ['glib']
+    deps = ['glib', 'gobject-introspection']
 
     files_libs = ['libatk-1.0']
+    files_misc = ['lib/girepository-1.0/Atk-1.0.typelib', 'share/gir-1.0/Atk-1.0.gir']
     files_devel = ['lib/pkgconfig/atk.pc', 'include/atk-1.0']
     files_lang = ['atk10']
 

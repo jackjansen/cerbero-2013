@@ -10,7 +10,7 @@ class Recipe(recipe.Recipe):
     files_libs = ['libspeex', 'libspeexdsp']
     files_bins = ['speexdec', 'speexenc']
     files_devel = ['include/speex', 'lib/pkgconfig/speex.pc',
-        'lib/pkgconfig/speexdsp.pc']
+        'lib/pkgconfig/speexdsp.pc', 'share/aclocal/speex.m4']
 
     def prepare(self):
         if self.config.target_platform == Platform.ANDROID:

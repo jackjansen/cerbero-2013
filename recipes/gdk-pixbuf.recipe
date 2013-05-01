@@ -7,11 +7,15 @@ class Recipe(recipe.Recipe):
     version = '2.26.2'
     licenses = [License.LGPLv2Plus]
     configure_options = '--with-included-loaders --enable-static '
-    deps = ['jpeg', 'glib', 'libpng', 'tiff', 'zlib' ]
+    deps = ['jpeg', 'glib', 'libpng', 'tiff', 'zlib', 'gobject-introspection' ]
     autoreconf = True
 
     files_libs = ['libgdk_pixbuf-2.0']
     files_bins = ['gdk-pixbuf-query-loaders', 'gdk-pixbuf-csource']
+    files_misc = [
+        'lib/girepository-1.0/GdkPixbuf-2.0.typelib',
+        'share/gir-1.0/GdkPixbuf-2.0.gir',
+    ]
     files_devel = ['lib/pkgconfig/gdk-pixbuf-2.0.pc', 'include/gdk-pixbuf-2.0']
     files_lang = ['gdk-pixbuf']
     platform_files_modules = {

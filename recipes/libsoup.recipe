@@ -6,9 +6,10 @@ class Recipe(recipe.Recipe):
     version = '2.38.1'
     licenses = [License.LGPLv2Plus]
     configure_options = '--without-gnome'
-    deps = ['libxml2', 'glib']
+    deps = ['libxml2', 'glib', 'gobject-introspection']
 
     files_libs = ['libsoup-2.4']
+    files_misc = ['lib/girepository-1.0/Soup-2.4.typelib', 'share/gir-1.0/Soup-2.4.gir']
     files_devel = ['include/libsoup-2.4', 'lib/pkgconfig/libsoup-2.4.pc']
 
 
@@ -27,5 +28,5 @@ class Recipe(recipe.Recipe):
                  DistroVersion.FEDORA_17,
                  DistroVersion.FEDORA_18]:
             self.deps += [ 'glib-networking' ]
-        if self.config.target_platform in [Platform.WINDOWS, Platform.IOS]:
+        if self.config.target_platform in [Platform.WINDOWS, Platform.IOS, Platform.DARWIN]:
             self.configure_options += ' --disable-tls-check'

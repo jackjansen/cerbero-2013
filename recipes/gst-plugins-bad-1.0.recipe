@@ -16,6 +16,20 @@ class Recipe(recipe.Recipe):
 
     files_lang = ['gst-plugins-bad-1.0']
 
+    files_libs = [
+        'libgstbasecamerabinsrc-1.0',
+        'libgstbasevideo-1.0',
+        'libgstcodecparsers-1.0',
+        'libgstphotography-1.0',
+        'libgstsignalprocessor-1.0',
+    ]
+    
+    files_devel = [
+        'lib/pkgconfig/gstreamer-basevideo-1.0.pc',
+        'lib/pkgconfig/gstreamer-codecparsers-1.0.pc',
+        'lib/pkgconfig/gstreamer-plugins-bad-1.0.pc',
+    ]
+    
     files_plugins_effects = [
              'lib/gstreamer-1.0/libgstautoconvert%(mext)s',
              'lib/gstreamer-1.0/libgstbayer%(mext)s',

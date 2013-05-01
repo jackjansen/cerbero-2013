@@ -26,18 +26,18 @@ class Recipe(recipe.Recipe):
     files_misc = [
     ]
 
-    def prepare(self):
+    def configure(self):
         # x264 has it's own definition of various configure options
         self.config.host = self.config.build
         self.config.build = None
+        import pdb ; pdb.set_trace()
+        super(recipe.Recipe, self).configure()
         
 
-    def install(self):
+    def post_install(self):
         lib = LibtoolLibrary('libx264', self._x264_version, None, None, self.config.libdir, self.config.target_platform)
         lib.save()
         
         pc = PkgConfigWritter('x264', 'x264', self.version, '', '-L${libdir} -lx264', '-I${includedir}', self.config.prefix)
         pc.libs_priv = '${libdir}/libx264.a'
-        import pdb
-        pdb.set_trace()
         pc.save('x264', os.path.join(self.config.prefix, 'lib', 'pkgconfig'))
