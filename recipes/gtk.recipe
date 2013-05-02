@@ -3,12 +3,15 @@
 
 class Recipe(recipe.Recipe):
     name = 'gtk+'
-    version = '2.24.11'
+    version = '2.24.17'
     # TODO: check license - some source files are LGPLv2, others LGPLv2+,
     #       others LGPLv2.1+, COPYING is LGPLv2 and the webpage states LGPLv2.1
     licenses = [License.LGPLv2_1Plus]
     configure_options = '--with-included-immodules '
-    deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo']
+    deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common']
+    remotes = { 'origin' : 'git://git.gnome.org/gtk+' }
+    commit = '2.24.17'
+    config_sh = 'sh autogen.sh'
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
         }

@@ -28,5 +28,5 @@ class Recipe(recipe.Recipe):
                  DistroVersion.FEDORA_17,
                  DistroVersion.FEDORA_18]:
             self.deps += [ 'glib-networking' ]
-        if self.config.target_platform in [Platform.WINDOWS, Platform.IOS, Platform.DARWIN]:
+        if self.config.target_platform in [Platform.WINDOWS, Platform.IOS]:
             self.configure_options += ' --disable-tls-check'
