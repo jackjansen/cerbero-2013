@@ -11,4 +11,5 @@ class Recipe(recipe.Recipe):
     files_libs = ['libxslt', 'libexslt']
     files_devel = ['bin/xsltproc', 'bin/xslt-config', 'include/libexslt', 'include/libxslt',
                    'lib/xsltConf.sh',
-                   'lib/pkgconfig/libexslt.pc', 'lib/pkgconfig/libxslt.pc']
+                   'lib/pkgconfig/libexslt.pc', 'lib/pkgconfig/libxslt.pc',
+                   'share/aclocal/libxslt.m4']

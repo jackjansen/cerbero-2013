@@ -11,7 +11,8 @@ class Recipe(recipe.Recipe):
     files_libs = ['libvorbis', 'libvorbisenc', 'libvorbisfile']
     files_devel = [
         'include/vorbis', 'lib/pkgconfig/vorbis.pc',
-        'lib/pkgconfig/vorbisenc.pc', 'lib/pkgconfig/vorbisfile.pc']
+        'lib/pkgconfig/vorbisenc.pc', 'lib/pkgconfig/vorbisfile.pc',
+        'share/aclocal/vorbis.m4']
 
     def configure(self):
         if self.config.target_platform == Platform.IOS:

@@ -3,9 +3,12 @@
 
 class Recipe(recipe.Recipe):
     name = 'atk'
-    version = '2.4.0'
+    version = '2.8.0'
     licenses = [License.LGPLv2Plus]
     deps = ['glib', 'gobject-introspection']
+    remotes = { 'origin' : 'git://git.gnome.org/atk' }
+    commit = 'ATK_2_8_0'
+    config_sh = 'sh autogen.sh'
 
     files_libs = ['libatk-1.0']
     files_misc = ['lib/girepository-1.0/Atk-1.0.typelib', 'share/gir-1.0/Atk-1.0.gir']
