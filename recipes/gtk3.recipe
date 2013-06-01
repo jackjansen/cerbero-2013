@@ -77,7 +77,7 @@ class Recipe(recipe.Recipe):
         if self.config.target_platform == Platform.WINDOWS:
             self.configure_options += '--disable-papi --disable-cups '
         elif self.config.target_platform == Platform.DARWIN:
-            self.configure_options += '--with-gdktarget=quartz '
+            self.configure_options += '--enable-quartz-backend --enable-quartz-relocation '
         elif self.config.target_platform == Platform.LINUX:
             # Can't change CFLAGS and use configure cache
             self.can_use_configure_cache = False
