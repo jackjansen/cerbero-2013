@@ -8,7 +8,7 @@ class Recipe(recipe.Recipe):
     #       others LGPLv2.1+, COPYING is LGPLv2 and the webpage states LGPLv2.1
     licenses = [License.LGPLv2_1Plus]
     configure_options = '--with-included-immodules '
-    deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common']
+    deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common', 'gobject-introspection']
     remotes = { 'origin' : 'git://git.gnome.org/gtk+' }
     commit = '3.8.2'
     config_sh = 'sh autogen.sh'
@@ -16,20 +16,40 @@ class Recipe(recipe.Recipe):
         Platform.WINDOWS: ['libstdc++'],
         }
 
-    files_libs = ['libgailutil']
-    files_bins = ['gtk-update-icon-cache', 'gtk-query-immodules-2.0']
-    files_devel = [
-        'bin/gtk-demo%(bext)s',
-        'bin/gtk-builder-convert',
-        'lib/gtk-2.0/include',
-        'lib/pkgconfig/gtk+-2.0.pc',
-        'lib/pkgconfig/gdk-2.0.pc',
-        'lib/pkgconfig/gail.pc',
-        'include/gtk-2.0',
-        'include/gail-1.0',
-        'share/gtk-2.0/demo',
+    files_libs = [
+        'libgailutil-3',
+        'libgdk-3',
+        'libgtk-3',
     ]
-    files_modules = ['lib/gtk-2.0/modules/libgail%(mext)s']
+    files_bins = [
+        'gtk-update-icon-cache', 
+        'gtk-query-immodules-3.0',
+        'gtk-launch',
+        'gtk3-widget-factory', # XXXJACK or in devel?
+    ]
+    files_devel = [
+        'bin/gtk3-demo%(bext)s',
+        'bin/gtk3-demo-application%(bext)s',
+#        'bin/gtk-builder-convert',
+        'lib/pkgconfig/gtk+-3.0.pc',
+        'lib/pkgconfig/gdk-3.0.pc',
+        'lib/pkgconfig/gail-3.0.pc',
+        'include/gtk-3.0',
+        'include/gail-3.0',
+        'share/aclocal/gtk-3.0.m4',
+    ]
+    files_misc = [
+        'lib/girepository-1.0/Gdk-3.0.typelib',
+        'lib/girepository-1.0/Gtk-3.0.typelib',
+        'share/gir-1.0/Gdk-3.0.gir',
+        'share/gir-1.0/Gtk-3.0.gir',
+        'share/gtk-3.0/gtkbuilder.rng',
+		'share/glib-2.0/schemas/gschemas.compiled',
+		'share/glib-2.0/schemas/org.gtk.Demo.gschema.xml',
+		'share/glib-2.0/schemas/org.gtk.Settings.ColorChooser.gschema.xml',
+		'share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml',
+        # Jack: what about lib/gtk-3.0???
+    ]
     platform_files_libs = {
         Platform.WINDOWS: ['libgtk-win32-2.0', 'libgdk-win32-2.0'],
         Platform.DARWIN: ['libgtk-quartz-2.0', 'libgdk-quartz-2.0'],
@@ -37,11 +57,19 @@ class Recipe(recipe.Recipe):
         }
     platform_files_devel = {
         Platform.WINDOWS: [
-            'lib/pkgconfig/gtk+-win32-2.0.pc', 'lib/pkgconfig/gdk-win32-2.0.pc'],
+            'lib/pkgconfig/gtk+-win32-3.0.pc', 
+            'lib/pkgconfig/gdk-win32-3.0.pc',
+        ],
         Platform.DARWIN: [
-            'lib/pkgconfig/gtk+-quartz-2.0.pc', 'lib/pkgconfig/gdk-quartz-2.0.pc'],
+            'lib/pkgconfig/gtk+-quartz-3.0.pc', 
+            'lib/pkgconfig/gdk-quartz-3.0.pc',
+            'lib/pkgconfig/gtk+-unix-print-3.0.pc',
+        ],
         Platform.LINUX: [
-            'lib/pkgconfig/gtk+-x11-2.0.pc', 'lib/pkgconfig/gdk-x11-2.0.pc'],
+            'lib/pkgconfig/gtk+-3.0.pc', 
+            'lib/pkgconfig/gtk+-unix-print-3.0.pc',
+            'lib/pkgconfig/gdk-3.0.pc',
+        ],
         }
     platform_files_themes = {
         Platform.LINUX: [
@@ -52,9 +80,17 @@ class Recipe(recipe.Recipe):
         }
     platform_files_modules = {
         Platform.LINUX: [
-            'lib/gtk-2.0/modules/libferret%(mext)s',],
+            'lib/gtk-3.0/3.0.0/immodules.cache',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cups%(mext)s',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file%(mext)s',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr%(mext)s',
+        ],
         Platform.DARWIN: [
-            'lib/gtk-2.0/modules/libferret%(mext)s',],
+            'lib/gtk-3.0/3.0.0/immodules.cache',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cups%(mext)s',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file%(mext)s',
+            'lib/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr%(mext)s',
+        ],
         }
     files_lang = ['gtk20', 'gtk20-properties']
 

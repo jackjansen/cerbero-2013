@@ -13,7 +13,11 @@ class Recipe(recipe.Recipe):
     config_sh = 'sh autogen.sh'
 
     files_libs = ['libgdk_pixbuf-2.0']
-    files_bins = ['gdk-pixbuf-query-loaders', 'gdk-pixbuf-csource']
+    files_bins = [
+        'gdk-pixbuf-query-loaders', 
+        'gdk-pixbuf-csource',
+        'gdk-pixbuf-pixdata',
+        ]
     files_misc = [
         'lib/girepository-1.0/GdkPixbuf-2.0.typelib',
         'share/gir-1.0/GdkPixbuf-2.0.gir',
