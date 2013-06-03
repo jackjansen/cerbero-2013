@@ -30,7 +30,6 @@ class Recipe(recipe.Recipe):
         # x264 has it's own definition of various configure options
         self.config.host = self.config.build
         self.config.build = None
-        import pdb ; pdb.set_trace()
         super(recipe.Recipe, self).configure()
         
 
