@@ -1,0 +1,19 @@
+# vi:si:et:sw=4:sts=4:ts=4:syntax=python
+# -*- Mode: Python -*-
+
+
+class Package(package.Package):
+
+    name = 'gobject3-python'
+    shortdesc = 'GLib/GObject python bindings'
+    longdesc = 'GLib/GObject python bindings'
+    url = "http://www.gstreamer.com"
+    version = '2012.11'
+    codename = 'Brahmaputra'
+    license = License.LGPL
+    uuid = '419a5953-4997-4f8d-b431-c46042effcfc'
+    vendor = 'GStreamer Project'
+    org = 'com.gstreamer'
+    deps = ['base-system']
+
+    files = ['pygobject3']

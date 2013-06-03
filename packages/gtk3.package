@@ -1,0 +1,29 @@
+# vi:si:et:sw=4:sts=4:ts=4:syntax=python
+# -*- Mode: Python -*-
+
+
+class Package(package.Package):
+
+    name = 'gtk+-3.0'
+    shortdesc = 'Gtk toolkit'
+    longdesc = 'Gtk toolkit'
+    url = "http://www.gstreamer.com"
+    version = '2012.11'
+    codename = 'Brahmaputra'
+    license = License.LGPL
+    vendor = 'GTK+ Project'
+    org = 'com.gstreamer'
+    uuid = 'ba98ba40-cc1f-11e2-8b8b-0800200c9a66'
+    deps = ['base-system']
+
+    files = [
+        'atk', 
+        'gtk3+', 
+#        'gtk-engines', 
+        'tango-icon-theme'
+    ]
+    platform_files = {
+        Platform.DARWIN: [
+#            'gtk-mac-integration'
+        ],
+    }
