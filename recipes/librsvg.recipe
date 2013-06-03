@@ -3,19 +3,22 @@
 
 class Recipe(recipe.Recipe):
     name = 'librsvg'
-    version = '2.36.1'
+    version = '2.36.4'
     licenses = [License.LGPLv2]
-    deps = ['gdk-pixbuf', 'libcroco', 'gtk+']
+    remotes = { 'origin' : 'git://git.gnome.org/librsvg' }
+    commit = '2.36.4'
+    deps = ['gdk-pixbuf', 'libcroco', 'gtk3+']
+    config_sh = 'sh autogen.sh'
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
         }
-    configure_options = '--enable-introspection=no'
 
     files_libs = ['librsvg-2']
-    files_bins = ['rsvg-convert']
+    files_bins = ['rsvg-convert', 'rsvg-view-3']
     files_loader = ['lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg%(mext)s']
     files_devel = ['include/librsvg-2.0/librsvg',
                    'lib/pkgconfig/librsvg-2.0.pc']
+    files_misc = ['lib/girepository-1.0/Rsvg-2.0.typelib', 'share/gir-1.0/Rsvg-2.0.gir']
 
     def prepare(self):
         if self.config.target_platform == Platform.DARWIN:
