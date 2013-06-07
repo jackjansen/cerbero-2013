@@ -11,7 +11,7 @@ class Recipe(recipe.Recipe):
 
     files_libs = ['libfontconfig']
     files_etc = [
-        'etc/fonts/conf.d',
+        'etc/fonts/conf.d/',
         'etc/fonts/fonts.conf',
         'share/fontconfig'
         ]
