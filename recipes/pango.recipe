@@ -16,19 +16,17 @@ class Recipe(recipe.Recipe):
         Platform.WINDOWS: ['libstdc++'],
         }
 
-    files_libs = ['libpangocairo-1.0', 'libpango-1.0', 'libpangoft2-1.0']
+    files_libs = ['libpangocairo-1.0', 'libpango-1.0']
     files_bins = ['pango-querymodules', 'pango-view']
     files_misc = [
         'share/gir-1.0/PangoCairo-1.0.gir',
         'share/gir-1.0/Pango-1.0.gir',
-        'share/gir-1.0/PangoFT2-1.0.gir',
         'lib/girepository-1.0/PangoCairo-1.0.typelib',
         'lib/girepository-1.0/Pango-1.0.typelib',
-        'lib/girepository-1.0/PangoFT2-1.0.typelib',
     ]
 
     files_devel = ['include/pango-1.0',
-        'lib/pkgconfig/pangoft2.pc', 'lib/pkgconfig/pango.pc',
+        'lib/pkgconfig/pango.pc',
         'lib/pkgconfig/pangocairo.pc']
     platform_files_libs = {
         Platform.WINDOWS: ['libpangowin32-1.0'],
