@@ -7,7 +7,10 @@ class Recipe(recipe.Recipe):
     version = '2.28.1'
     licenses = [License.LGPLv2Plus]
     configure_options = '--with-included-loaders --enable-static '
-    remotes = { 'origin' : 'git://git.gnome.org/gdk-pixbuf' }
+    remotes = { 
+        'origin' : 'git://git.gnome.org/gdk-pixbuf',
+        'github' : 'https://github.com/jackjansen/gdk-pixbuf.git',
+         }
     commit = 'jack-patches'
     deps = ['jpeg', 'glib', 'libpng', 'tiff', 'zlib', 'gobject-introspection' ]
     config_sh = 'sh autogen.sh'
