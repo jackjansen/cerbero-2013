@@ -373,4 +373,11 @@ class UniversalRecipe(object):
                                         recipe.config.target_arch, f)
                     if not os.path.exists(os.path.dirname(dest)):
                         os.makedirs(os.path.dirname(dest))
+                    # Special case: absolute symlinks into the prefix dir.
+                    # Turn these into relative links.
+                    if os.path.islink(src) and src.startswith(self._config.prefix):
+                        relpath = os.path.relpath(os.readlink(src), os.path.dirname(src))
+                        os.unlink(dest)
+                        os.symlink(relpath, dest)
+                        continue
                     shutil.move(src, dest)

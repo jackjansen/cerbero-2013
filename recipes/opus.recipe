@@ -6,6 +6,10 @@ class Recipe(recipe.Recipe):
     version = '1.0.1'
     licenses = [License.BSD_like]
     autoreconf = True
+    remotes = {
+        'origin' : 'git://anongit.freedesktop.org/gstreamer-sdk/opus.git',
+        'github' : 'https://github.com/jackjansen/gdk-pixbuf.git',
+        }
     commit = 'jack-patches'
     
 
