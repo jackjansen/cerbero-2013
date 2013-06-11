@@ -10,7 +10,7 @@ class Recipe(recipe.Recipe):
     version = '0.%s' % _x264_version
     remotes = {'origin': 'git://git.videolan.org/x264.git'}
     config_sh = './configure --enable-static --enable-shared'
-    configure_tpl = '%(config-sh)s --prefix=%(prefix)s --libdir=%(libdir)s'
+    configure_tpl = '%(config-sh)s --prefix=%(prefix)s --libdir=%(libdir)s --host=%(host)s %(options)s'
     commit = 'origin/stable'
     files_bins = [
         "x264"
