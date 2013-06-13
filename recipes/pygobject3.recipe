@@ -3,11 +3,11 @@
 
 class Recipe(recipe.Recipe):
     name = 'pygobject3'
-    version = '3.7.2'
+    version = '3.8.2'
     licenses = [License.LGPLv2_1Plus]
     deps = ['glib', 'gobject-introspection', 'gnome-common', 'py2cairo']
     remotes = {'origin' : 'git://git.gnome.org/pygobject'}
-    commit = '3.7.2'
+    commit = '3.8.2'
     config_sh = 'sh autogen.sh'
     make_check = None  # disabled until we fix the checks
 
