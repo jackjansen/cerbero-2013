@@ -3,14 +3,14 @@
 
 class Recipe(recipe.Recipe):
     name = 'gtk3+'
-    version = '3.8.2'
+    version = '3.4.4'
     # TODO: check license - some source files are LGPLv2, others LGPLv2+,
     #       others LGPLv2.1+, COPYING is LGPLv2 and the webpage states LGPLv2.1
     licenses = [License.LGPLv2_1Plus]
     configure_options = '--with-included-immodules '
     deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common', 'gobject-introspection']
     remotes = { 'origin' : 'git://git.gnome.org/gtk+' }
-    commit = '3.8.2'
+    commit = '3.4.4'
     config_sh = 'sh autogen.sh'
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
@@ -37,6 +37,7 @@ class Recipe(recipe.Recipe):
         'include/gtk-3.0',
         'include/gail-3.0',
         'share/aclocal/gtk-3.0.m4',
+        'share/gtk-3.0/demo',
     ]
     files_misc = [
         'lib/girepository-1.0/Gdk-3.0.typelib',
@@ -73,10 +74,15 @@ class Recipe(recipe.Recipe):
         }
     platform_files_themes = {
         Platform.LINUX: [
-            'share/themes/Default/gtk-2.0-key/gtkrc'],
+            'share/themes/Default/gtk-2.0-key/gtkrc'], # XXXX not updated for gtk3
         Platform.WINDOWS: [
-            'share/themes/MS-Windows/gtk-2.0/gtkrc',
-            'lib/gtk-2.0/2.10.0/engines/libwimp.dll',]
+            'share/themes/MS-Windows/gtk-2.0/gtkrc', # XXXX not updated for gtk3
+            'lib/gtk-2.0/2.10.0/engines/libwimp.dll',],
+        Platform.DARWIN : [
+            'share/themes/Default/gtk-3.0/gtk-keys.css',
+            'share/themes/Emacs/gtk-3.0/gtk-keys.css',
+            'share/themes/Mac/gtk-3.0/gtk-keys.css',
+            ],
         }
     platform_files_modules = {
         Platform.LINUX: [

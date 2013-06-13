@@ -3,11 +3,11 @@
 
 class Recipe(recipe.Recipe):
     name = 'pygobject3'
-    version = '3.8.2'
+    version = '3.4.2'
     licenses = [License.LGPLv2_1Plus]
     deps = ['glib', 'gobject-introspection', 'gnome-common', 'py2cairo']
     remotes = {'origin' : 'git://git.gnome.org/pygobject'}
-    commit = '3.8.2'
+    commit = '3.4.2'
     config_sh = 'sh autogen.sh'
     make_check = None  # disabled until we fix the checks
 
@@ -22,7 +22,7 @@ class Recipe(recipe.Recipe):
 #             shutil.move(os.path.join(self.config.prefix, 'lib', 'libpyglib-2.0-python.pyd'),
 #                         os.path.join(self.config.prefix, 'bin', 'libpyglib-2.0-python.pyd'))
 # 
-    files_libs = ['libpyglib-gi-2.0-python2.7']
+    files_libs = ['libpyglib-gi-2.0-python']
     files_python = [
         'site-packages/pygtkcompat/__init__.py',
         'site-packages/pygtkcompat/pygtkcompat.py',
