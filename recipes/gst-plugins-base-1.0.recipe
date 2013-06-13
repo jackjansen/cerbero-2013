@@ -59,6 +59,31 @@ class Recipe(recipe.Recipe):
              'lib/gstreamer-1.0/libgstlibvisual%(mext)s',
             ]
 
+    files_misc = [
+            'share/gir-1.0/GstApp-1.0.gir',
+            'lib/girepository-1.0/GstApp-1.0.typelib',
+            'share/gir-1.0/GstApp-1.0.gir',
+            'share/gir-1.0/GstAudio-1.0.gir',
+            'share/gir-1.0/GstFft-1.0.gir',
+            'share/gir-1.0/GstPbutils-1.0.gir',
+            'share/gir-1.0/GstRiff-1.0.gir',
+            'share/gir-1.0/GstRtp-1.0.gir',
+            'share/gir-1.0/GstRtsp-1.0.gir',
+            'share/gir-1.0/GstSdp-1.0.gir',
+            'share/gir-1.0/GstTag-1.0.gir',
+            'share/gir-1.0/GstVideo-1.0.gir',
+            'lib/girepository-1.0/GstApp-1.0.typelib',
+            'lib/girepository-1.0/GstAudio-1.0.typelib',
+            'lib/girepository-1.0/GstFft-1.0.typelib',
+            'lib/girepository-1.0/GstPbutils-1.0.typelib',
+            'lib/girepository-1.0/GstRiff-1.0.typelib',
+            'lib/girepository-1.0/GstRtp-1.0.typelib',
+            'lib/girepository-1.0/GstRtsp-1.0.typelib',
+            'lib/girepository-1.0/GstSdp-1.0.typelib',
+            'lib/girepository-1.0/GstTag-1.0.typelib',
+            'lib/girepository-1.0/GstVideo-1.0.typelib',
+    ]
+    
     files_plugins_devel = [
             #'include/gstreamer-1.0/gst/allocators',
             'include/gstreamer-1.0/gst/app',
