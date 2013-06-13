@@ -377,7 +377,10 @@ class UniversalRecipe(object):
                     # Turn these into relative links.
                     if os.path.islink(src) and src.startswith(self._config.prefix):
                         relpath = os.path.relpath(os.readlink(src), os.path.dirname(src))
-                        os.unlink(dest)
+                        try:
+                            os.unlink(dest)
+                        except IOError:
+                            pass
                         os.symlink(relpath, dest)
                         continue
                     shutil.move(src, dest)
