@@ -25,6 +25,8 @@ class Recipe(recipe.Recipe):
     ]
     files_misc = [
     ]
+    
+    force_configure = True # x264 ships with both Makefile and configure already there
 
     def configure(self):
         # x264 has it's own definition of various configure options
