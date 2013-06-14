@@ -86,6 +86,12 @@ class Recipe(recipe.Recipe):
              'lib/gstreamer-1.0/libgstgoom2k1%(mext)s',
             ]
 
+    files_misc = [
+            'share/gstreamer-1.0/presets/GstIirEqualizer10Bands.prs',
+            'share/gstreamer-1.0/presets/GstIirEqualizer3Bands.prs',
+            'share/gstreamer-1.0/presets/GstVP8Enc.prs',
+    ]
+
     platform_files_plugins_capture = {
         Platform.LINUX: [
              'lib/gstreamer-1.0/libgstvideo4linux2%(mext)s',

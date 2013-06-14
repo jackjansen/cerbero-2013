@@ -3,14 +3,14 @@
 
 class Recipe(recipe.Recipe):
     name = 'gtk3+'
-    version = '3.4.4'
+    version = '3.6.4'
     # TODO: check license - some source files are LGPLv2, others LGPLv2+,
     #       others LGPLv2.1+, COPYING is LGPLv2 and the webpage states LGPLv2.1
     licenses = [License.LGPLv2_1Plus]
     configure_options = '--with-included-immodules '
     deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common', 'gobject-introspection']
     remotes = { 'origin' : 'git://git.gnome.org/gtk+' }
-    commit = '3.4.4'
+    commit = '3.6.4'
     config_sh = 'sh autogen.sh'
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
@@ -24,7 +24,6 @@ class Recipe(recipe.Recipe):
     files_bins = [
         'gtk-update-icon-cache', 
         'gtk-query-immodules-3.0',
-        'gtk-launch',
         'gtk3-widget-factory', # XXXJACK or in devel?
     ]
     files_devel = [

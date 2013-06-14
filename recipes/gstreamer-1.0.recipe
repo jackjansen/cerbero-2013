@@ -38,9 +38,6 @@ class Recipe(recipe.Recipe):
             'lib/girepository-1.0/GstController-1.0.typelib',
             'lib/girepository-1.0/GstBase-1.0.typelib',
             'lib/girepository-1.0/GstCheck-1.0.typelib',
-            'share/gstreamer-1.0/presets/GstIirEqualizer10Bands.prs',
-            'share/gstreamer-1.0/presets/GstIirEqualizer3Bands.prs',
-            'share/gstreamer-1.0/presets/GstVP8Enc.prs',
     ]
 
     files_devel = [
