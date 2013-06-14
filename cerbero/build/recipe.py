@@ -379,7 +379,7 @@ class UniversalRecipe(object):
                         relpath = os.path.relpath(os.readlink(src), os.path.dirname(src))
                         try:
                             os.unlink(dest)
-                        except IOError:
+                        except OSError:
                             pass
                         os.symlink(relpath, dest)
                         continue
