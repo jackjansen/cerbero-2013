@@ -10,8 +10,8 @@ class Recipe(recipe.Recipe):
     #autoreconf = True
     #autoreconf_sh = 'ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS" autoreconf -ivf '
     licenses = [License.LGPLv2Plus]
-    configure_options = '--with-included-modules --enable-static --disable-gtk-doc'
-    deps = ['cairo', 'fontconfig', 'freetype', 'gtk-doc-lite', 'gobject-introspection']
+    configure_options = '--with-included-modules --enable-static'
+    deps = ['cairo', 'fontconfig', 'freetype', 'gtk-doc', 'gobject-introspection']
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
         }
