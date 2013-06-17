@@ -9,8 +9,11 @@ class Recipe(recipe.Recipe):
     config_sh = 'sh autogen.sh'
 
     deps = ['glib', 'gtk-doc', 'gtk-doc']
-    commit = 'GOBJECT_INTROSPECTION_1_36_0'
-    remotes = {'upstream': 'git://git.gnome.org/gobject-introspection'}
+    commit = 'jack-patches'
+    remotes = {
+        'upstream': 'git://git.gnome.org/gobject-introspection',
+        'github' : 'https://github.com/jackjansen/gobject-introspection.git',
+        }
     
     files_libs = ['libgirepository-1.0']
     files_bins = [
