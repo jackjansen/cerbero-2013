@@ -9,8 +9,11 @@ class Recipe(recipe.Recipe):
     licenses = [License.LGPLv2_1Plus]
     configure_options = '--with-included-immodules '
     deps = ['glib', 'atk', 'pango', 'gdk-pixbuf', 'cairo', 'gnome-common', 'gobject-introspection']
-    remotes = { 'origin' : 'git://git.gnome.org/gtk+' }
-    commit = '3.6.4'
+    remotes = { 
+        'origin' : 'git://git.gnome.org/gtk+',
+        'github' : 'https://github.com/jackjansen/gtk.git',
+        }
+    commit = 'jack-patches'
     config_sh = 'sh autogen.sh'
     platform_deps = {
         Platform.WINDOWS: ['libstdc++'],
