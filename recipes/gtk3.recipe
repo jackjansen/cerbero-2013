@@ -13,6 +13,9 @@ class Recipe(recipe.Recipe):
         'origin' : 'git://git.gnome.org/gtk+',
         'github' : 'https://github.com/jackjansen/gtk.git',
         }
+    # NOTE: this commit contains a fix for a pygobject3 problem. The Gtk folks
+    # already have a completely different fix (see https://bugzilla.gnome.org/show_bug.cgi?id=667759)
+    # so this branch may wither away soon.
     commit = 'jack-patches'
     config_sh = 'sh autogen.sh'
     platform_deps = {
