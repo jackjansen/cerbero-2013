@@ -16,4 +16,4 @@ class Package(package.Package):
     org = 'com.gstreamer'
     deps = ['base-system']
 
-    files = ['pygobject3']
+    files = ['pygobject3', 'gobject-introspection']
